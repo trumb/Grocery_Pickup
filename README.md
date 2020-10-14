@@ -45,6 +45,11 @@ Tips for file naming files and folders:
 Editor: Joshua Krauchi
 Included: checkout.html
 
+
 Editor: Eric Tan
 Included: profile.html
+
+
+Edditor: Boki Pantic
+Included: ordering.html
 
