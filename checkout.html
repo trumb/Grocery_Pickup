@@ -12,16 +12,20 @@
   <link href="styles/checkout.css" rel="stylesheet">
 </head>
 
-<body>
-  <div class="container">
+<body class="container">
     <h2>Checkout</h2>
-    <p class="lead">Check out your items.</p>
+    <div class='d-flex justify-content-between'>
+      <p class="lead">Check out your items.</p>
+      <button id="empty" class="btn btn-primary">Empty Cart</button>
+    </div>
     <div id="cart" class="border border-primary rounded"></div>
-  </div>
+    <div id="space"></div>
 
-  <footer class="container footer fixed-bottom mt-auto py-3">
-    <a href="payment.html" type="button" class="mt-auto mb-3 btn btn-block btn-primary btn-rounded">Proceed to Payment</a>
-  </footer>
+    <footer class="container footer fixed-bottom mt-auto mb-3">
+      <a href="payment.html" class="mt-auto mb-3 btn btn-block btn-primary btn-rounded disabled">Proceed to Payment</a>
+    </footer>
+
+
 
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>

@@ -1,6 +1,24 @@
+var cartSize = 0;
+
+$(document).ready(function() {
+  createCart();
+});
+
+$("#empty").on("click", function(event) {
+  db.collection("cart").get().then(function(snap) {
+    snap.forEach(function(doc) {
+      db.collection("cart").doc(doc.id).delete().then();
+      document.getElementById(doc.id).remove();
+    });
+  });
+  checkIfCartEmpty(0);
+});
+
 function createCart() {
   db.collection("cart").get().then(function(snap) {
     snap.forEach(function(doc) {
+      cartSize++;
+      console.log(cartSize);
       var id = doc.id;
       var n = doc.data().name;
       var p = doc.data().price;
@@ -10,14 +28,16 @@ function createCart() {
       $("#" + id).append("<img class='img-fluid img-thumbnail' src='images/" + img + "' alt='" + n + "'/>");
       $("#" + id).append("<div class='container d-flex flex-column'></div>");
       $("#" + id + " div").append("<span class='d-flex justify-content-between'><h5>" + n + "</h5></span>");
-      $("#" + id + " span").append("<button type='button' id='remove' class='btn'>×</button>");
+      $("#" + id + " span").append("<button type='button' id='remove' class='btn btn-primary'>×</button>");
       $("#" + id + " div").append("<div class='d-flex justify-content-between'>$" + p + "</div>");
       $("#" + id + " div div").append("<div class='btn-group' role='group'></div>");
-      $("#" + id + " .btn-group").append("<button type='button' id='plus' class='btn btn-secondary'>+</button>");
+      $("#" + id + " .btn-group").append("<button id='plus' class='btn btn-primary'>+</button>");
       $("#" + id + " .btn-group").append("<span id='" + id + "q'>" + q + "</span>");
-      $("#" + id + " .btn-group").append("<button type='button' id='minus' class='btn btn-secondary'>−</button>");
+      $("#" + id + " .btn-group").append("<button id='minus' class='btn btn-primary'>−</button>");
       $("#" + id + " #remove").on("click", function(event) {
         removeClick(id);
+        cartSize--;
+        checkIfCartEmpty(cartSize);
       });
       $("#" + id + " #plus").on("click", function(event) {
         plusClick(id);
@@ -25,16 +45,13 @@ function createCart() {
       $("#" + id + " #minus").on("click", function(event) {
         minusClick(id);
       });
+      checkIfCartEmpty(cartSize);
     });
   });
 }
 
-function emptyClick() {
-
-}
-
 function removeClick(id) {
-  db.collection("cart").doc(id).delete().then(function() {});
+  db.collection("cart").doc(id).delete().then();
   document.getElementById(id).remove();
 }
 
@@ -58,16 +75,16 @@ function minusClick(id) {
   });
 }
 
-createCart();
+function checkIfCartEmpty(cs) {
+  if (cs > 0) {
+    $("footer a").removeClass("disabled");
+  } else {
+    $("footer a").addClass("disabled");
+  }
+}
 
 /*async getMarker() {
     const snapshot = await firebase.firestore().collection('events').get()
     return snapshot.docs.map(doc => doc.data());
 }
 */
-
-
-
-/*db.collection("cart").doc("item" + i).onSnapshot(function(s) {
-  document.getElementById("na").innerText = s.data().name;
-});*/
