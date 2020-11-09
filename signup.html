@@ -83,13 +83,13 @@ button:hover {
 
     <label for="fname"><b>First Name</b></label>
     <input type="text" id="fname" name="firstname" placeholder="Your name.." pattern="[A-Za-z]">
-      
+
     <label for="lname"><b>Last Name</b></label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name.." pattern="[A-Za-z]">
 
     <label for="num"><b>Phone Number</b></label>
     <input type="text" id="num" name="phonenum" placeholder="Enter your phone number">
-    
+
     <label for="email"><b>Email</b></label>
     <input type="text" placeholder="Enter Email" name="email" required>
 
@@ -98,19 +98,41 @@ button:hover {
 
     <label for="psw-repeat"><b>Confirm Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required pattern="[A-Za-z0-9]{10,20}">
-    
+
     <label>
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
     </label>
-    
+
     <p>read and agree to <a href="#" style="color:dodgerblue">Terms of Use & PrivacyPolicy </a>.</p>
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit" id="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+ <!-- Add Firebase products that you want to use -->
+ <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+ <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+ <!-- Your own Firebase API key information -->
+ <script src="scripts/firebase_api.js"></script>
+ <!-- Your own JavaScript functions included here -->
+ <script src="scripts/XXXXX.js"></script>
+
+<script>
+  $("#submit").on("click", function(event) {
+    db.collection("account").doc().set({
+      email: "hello@test.com",
+      password: "pass"
+    });
+  });
+</script>
 
 </body>
 </html>
