@@ -1,10 +1,14 @@
+// The size of the cart. Number of items in the cart.
 var cartSize = 0;
 
+// Create a cart when the page is loaded.
 $(document).ready(function() {
   createCart();
 });
 
+// "Empty Cart" button handler.
 $("#empty").on("click", function(event) {
+  cartSize = 0;
   db.collection("cart").get().then(function(snap) {
     snap.forEach(function(doc) {
       db.collection("cart").doc(doc.id).delete().then();
@@ -18,11 +22,10 @@ function createCart() {
   db.collection("cart").get().then(function(snap) {
     snap.forEach(function(doc) {
       cartSize++;
-      console.log(cartSize);
       var id = doc.id;
+      var img = doc.data().img_name;
       var n = doc.data().name;
       var p = doc.data().price;
-      var img = doc.data().img_name;
       var q = doc.data().quantity;
       $("#cart").append("<div id='" + id + "' class='d-flex flex-row align-items-center border-bottom border-primary'></div>");
       $("#" + id).append("<img class='img-fluid img-thumbnail' src='images/" + img + "' alt='" + n + "'/>");
@@ -35,6 +38,7 @@ function createCart() {
       $("#" + id + " .btn-group").append("<span id='" + id + "q'>" + q + "</span>");
       $("#" + id + " .btn-group").append("<button id='minus' class='btn btn-primary'>−</button>");
       $("#" + id + " #remove").on("click", function(event) {
+        unsubscribe();
         removeClick(id);
         cartSize--;
         checkIfCartEmpty(cartSize);
@@ -46,35 +50,46 @@ function createCart() {
         minusClick(id);
       });
       checkIfCartEmpty(cartSize);
+      var unsubscribe = db.collection("cart").doc(id).onSnapshot(function(updated) {
+        if (cartSize == 0) {
+          unsubscribe();
+        }
+        else if (updated.data().quantity == 0) {
+          unsubscribe();
+          removeClick(id);
+          cartSize--;
+          checkIfCartEmpty(cartSize);
+        } else {
+          document.getElementById(id + "q").innerText = updated.data().quantity;
+        }
+      });
     });
   });
 }
 
+// "Remove" button handler.
 function removeClick(id) {
   db.collection("cart").doc(id).delete().then();
   document.getElementById(id).remove();
 }
 
+// "Plus" button handler. Increments quantity.
 function plusClick(id) {
   const increment = firebase.firestore.FieldValue.increment(1);
   db.collection("cart").doc(id).update({
     quantity: increment
   });
-  db.collection("cart").doc(id).onSnapshot(function(updated) {
-    document.getElementById(id + "q").innerText = updated.data().quantity;
-  });
 }
 
+// "Minus" button handler. Decrements quantity.
 function minusClick(id) {
   const decrement = firebase.firestore.FieldValue.increment(-1);
   db.collection("cart").doc(id).update({
     quantity: decrement
   });
-  db.collection("cart").doc(id).onSnapshot(function(updated) {
-    document.getElementById(id + "q").innerText = updated.data().quantity;
-  });
 }
 
+// If cart size is greater than 0, enable proceed button. Else, disable it.
 function checkIfCartEmpty(cs) {
   if (cs > 0) {
     $("footer a").removeClass("disabled");

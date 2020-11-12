@@ -127,7 +127,7 @@ button:hover {
 
 <script>
   $("#submit").on("click", function(event) {
-    db.collection("account").doc().set({
+    db.collection("accounts").doc().set({
       email: document.getElementById("email").value,
       firstname: document.getElementById("fname").value,
       lastname: document.getElementById("lname").value,
