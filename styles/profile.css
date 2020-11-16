@@ -67,11 +67,11 @@ body{
 }
 .profile-work{
   padding: 11%;
-  margin-top: -25%;
+  margin-top: -20%;
 }
 .profile-work p{
   font-size: 1.5em;
-  color: #495057;
+  color: black;
   font-weight: 700;
   margin-top: 10%;
 }
@@ -95,4 +95,14 @@ body{
 #profile-info {
   font-size: 1.25em;
 }
+.btn-secondary  {
+  background-color:  #a0ebe7;
+  color: black;
+
+}
+.btn-secondary:hover {
+  background-color: #4ea9eb;
+  color: #fff7ff;
+}
+
 
