@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Profile Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    <!-- Custom styles -->
+    <link href="styles/profile.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="Ethan.png"
+                            alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" name="file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                        Ethan Winters
+                        </h5>
+                        <h6>
+                        Ethan_Winters34@hotmail.com
+                        </h6>
+                        <p class="proile-rating">Last Order: <span>November 15, 2020</span></p>
+                        <br>
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                    aria-controls="home" aria-selected="true">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                    aria-controls="profile" aria-selected="false">Account ID</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-work">
+                        <p>Profile</p>
+                        <a href="">Personal Info</a><br />
+                        <a href="">Payment Info</a><br />
+                        <p>Notification</p>
+                        <a href="">Inbox Messages</a><br />
+                        <a href="">Receipts & Orders</a><br />
+                        <p>Help & Policies</p>
+                        <a href="">Help</a><br />
+                        <a href="">Terms & Servies</a><br />
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">Ethan Winters</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">Ethan_Winter34@hotmail.com</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Phone</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">123 456 7890</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Address Line</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">1234 W 12th Ave</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>City or Town</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">Vancouver</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Province</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">BC</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Postal Code</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">D2L 5UX</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Country</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p id="profile-info">Canada</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Account ID</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>1234 1234 1234 1234</p>
+                                </div>
+                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="scripts/firebase_api.js"></script>
+    <script src="scripts/account.js"></script>
+    </body>
+    </html>
