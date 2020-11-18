@@ -1,95 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
 <meta charset="utf-8">
 <title>SignUp Page</title>
-<style>
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #fff7ff;
-    }
-
-    * {
-        box-sizing: border-box
-    }
-
-    /* Full-width input fields */
-    input[type=text],
-    input[type=password] {
-        border-radius: 5px;;
-        width: 90%;
-        padding: 15px;
-        margin: 5px 0 1.5% 2%;
-        display: inline-block;
-        border: none;
-        background-color:#d8d1d8;
-    }
-#fname, #lname{
-    margin-left: 1%;
-    width: 38.3%;
-}
-    input[type=text]:focus,
-    input[type=password]:focus {
-        background-color: #fff7ff;
-        outline: none;
-    }
-
-    hr {
-        border: 1px solid #a0ebe7;
-        margin-bottom: 25px;
-    }
-
-    /* Set a style for all buttons */
-    button {
-        background-color:   #0ef873
-;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        opacity: 0.9;
-    }
-
-    button:hover {
-        opacity: 1;
-    }
-
-    /* Extra styles for the cancel button */
-    .cancelbtn {
-        padding: 14px 20px;
-        background-color: #02f0ee;
-    }
-
-    /* Float cancel and signup buttons and add an equal width */
-    .cancelbtn,
-    .signupbtn {
-        margin: .5% 1% 0 2%;
-        width: 43%;
-    }
-
-    /* Add padding to container elements */
-    .container {
-        padding: 16px;
-    }
-
-    /* Clear floats */
-    .clearfix::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    /* Change styles for cancel button and signup button on extra small screens */
-    @media screen and (max-width: 300px) {
-
-        .cancelbtn,
-        .signupbtn {
-            width: 100%;
-        }
-    }
-</style>
-
+    <!-- Custom styles -->
+<link href="styles/signup.css" rel="stylesheet">
+</head>
 <body>
 
     <form style="border:1px solid  #0ba3d9">
@@ -140,24 +56,9 @@
     <!-- Your own Firebase API key information -->
     <script src="scripts/firebase_api.js"></script>
     <!-- Your own JavaScript functions included here -->
-    <script src="scripts/checkout.js"></script>
+    <script src="scripts/signup.js"></script>
 
-    <script>
-        $("#submit").on("click", function(event) {
-            db.collection("account").doc().set({
-                email: document.getElementById("email").value,
-                firstname: document.getElementById("fname").value,
-                lastname: document.getElementById("lname").value,
-                phone: document.getElementById("num").value,
-                password: document.getElementById("password").value,
-            });
-            
-            //            db.collection("accounts").doc("EthanWinters").update({
-            //                fieldName: true / false
-            //            });
-        });
-    </script>
-
+    
 
 
 </body></html>
