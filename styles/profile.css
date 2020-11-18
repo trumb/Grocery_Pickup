@@ -1,12 +1,12 @@
 body{
-  background: -webkit-linear-gradient(left, #f5644d, #fff261);
+  background: -webkit-linear-gradient(top,#f8f5e6, #eeebd8);
 }
 .emp-profile{
   padding: 3%;
   margin-top: 3%;
   margin-bottom: 3%;
   border-radius: 0.5rem;
-  background: #fff7ff;
+  background: #f3e3b5;
 }
 .profile-img{
   text-align: center;
@@ -31,22 +31,29 @@ body{
   right: 0;
   top: 0;
 }
+
+/* Ethan Winter */
 .profile-head h5{
   color: #333;
   font-size: 3em;
 }
+
+/* the email  */
 .profile-head h6{
-  color: #4ea9eb;
+  color: #aa3434;
   font-size: 1.25em;
 }
+
+/* Last order */
 .proile-rating{
-  font-size: 1em;
-  color: #495057;
-  margin-top: 7%;
+  font-size: 1.2em;
+  color: #1f0a1b;
+  margin-top: 5%;
 }
+/* the last order date */
 .proile-rating span{
-  color: #4ea9eb;
-  font-size: 15px;
+  color: #1b18189f;
+  font-size: 13pt;
   font-weight: 700;
 }
 #hometab {
@@ -61,17 +68,20 @@ body{
   margin-top: 10%;
   border: none;
 }
+
+/* under about */
 .profile-head .nav-tabs .nav-link.active{
   border: none;
-  border-bottom:3px solid #a0ebe7;
+  border-bottom:3px solid #a1622f7c;
 }
 .profile-work{
   padding: 11%;
   margin-top: -20%;
 }
+/* Profile; Notification; Help&Policies */
 .profile-work p{
   font-size: 1.5em;
-  color: black;
+  color: #770d0d;
   font-weight: 700;
   margin-top: 10%;
 }
@@ -88,20 +98,25 @@ body{
   font-weight: 650;
   font-size: 1.25em;
 }
+/* right row */
 .profile-tab p{
   font-weight: 600;
-  color: #4ea9eb;
+  color: #754431;
+  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-family: 'Noto Serif TC', serif;
 }
 #profile-info {
   font-size: 1.25em;
 }
+/* button before click */
 .btn-secondary  {
-  background-color:  #a0ebe7;
-  color: black;
+  background-color:  #6e251c;
+  color: #ffffff;
 
 }
+/* When button clicked */
 .btn-secondary:hover {
-  background-color: #4ea9eb;
+  background-color: #1a0603;
   color: #fff7ff;
 }
 
