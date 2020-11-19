@@ -53,3 +53,5 @@ Included: profile.html
 Edditor: Boki Pantic
 Included: ordering.html
 
+Edditor: Lillian Xu
+Included: signup.html
