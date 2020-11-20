@@ -1,18 +1,7 @@
 // The size of the cart. Number of items in the cart.
 var cartSize = 0;
 
-// "Empty Cart" button handler.
-$("#empty").on("click", function(event) {
-  db.collection("cart").get().then(function(snap) {
-    snap.forEach(function(doc) {
-      db.collection("cart").doc(doc.id).delete().then();
-      document.getElementById(doc.id).remove();
-    });
-  });
-  cartSize = 0;
-  checkIfCartEmpty(cartSize);
-});
-
+// The cart div.
 const cart = document.querySelector("#cart");
 
 // Renders each item in the cart.
@@ -71,8 +60,7 @@ function renderItem(doc) {
 
   // "Plus" button handler. Increments quantity.
   plus.addEventListener("click", event => {
-    event.stopPropagation();
-    let id = event.target.parentElement.getAttribute("data-id");
+    let id = itemDiv.getAttribute("data-id");
     const increment = firebase.firestore.FieldValue.increment(1);
     db.collection("cart").doc(id).update({
       quantity: increment
@@ -81,22 +69,22 @@ function renderItem(doc) {
 
   // "Minus" button handler. Decrements quantity.
   minus.addEventListener("click", event => {
-    event.stopPropagation();
-    let id = event.target.parentElement.getAttribute("data-id");
+    let id = itemDiv.getAttribute("data-id");
     const decrement = firebase.firestore.FieldValue.increment(-1);
     db.collection("cart").doc(id).update({
       quantity: decrement
     });
   });
 
-  var onUpdate = db.collection("cart").doc(doc.id).onSnapshot(updated => {
-    if (cartSize == 0) {
-      onUpdate();
-    } else if (updated.data().quantity == 0) {
-      onUpdate();
-      removeItem(itemDiv);
-    } else {
-      quantity.textContent = updated.data().quantity;
+  db.collection("cart").doc(doc.id).onSnapshot(updated => {
+    if (cartSize != 0) {
+      if (updated.exists) {
+        if (updated.data().quantity == 0) {
+          removeItem(itemDiv);
+        } else {
+          quantity.textContent = updated.data().quantity;
+        }
+      }
     }
   });
 }
@@ -109,6 +97,7 @@ db.collection("cart").get().then(snap => {
   checkIfCartEmpty(cartSize);
 });
 
+// Deletes the reference and removes the itemDiv from the cart.
 function removeItem(itemDiv) {
   let id = itemDiv.getAttribute("data-id");
   db.collection("cart").doc(id).delete();
@@ -116,6 +105,17 @@ function removeItem(itemDiv) {
   cartSize--;
   checkIfCartEmpty(cartSize);
 }
+
+// "Empty Cart" button handler.
+$("#empty").on("click", event => {
+  db.collection("cart").get().then(snap => {
+    snap.forEach(function(doc) {
+      db.collection("cart").doc(doc.id).update({
+        quantity: 0
+      });
+    });
+  });
+});
 
 // If cart size is greater than 0, enable proceed button. Else, disable it.
 function checkIfCartEmpty(cs) {

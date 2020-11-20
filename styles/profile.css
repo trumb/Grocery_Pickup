@@ -45,13 +45,13 @@ body{
 }
 
 /* Last order */
-.proile-rating{
+.profile-rating{
   font-size: 1.2em;
   color: #1f0a1b;
   margin-top: 5%;
 }
 /* the last order date */
-.proile-rating span{
+.profile-rating span{
   color: #1b18189f;
   font-size: 13pt;
   font-weight: 700;
@@ -119,5 +119,3 @@ body{
   background-color: #1a0603;
   color: #fff7ff;
 }
-
-
