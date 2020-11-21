@@ -46,6 +46,7 @@ function renderItem(doc) {
   } else {
     quantity.textContent = 0;
   }
+  
   itemDiv.setAttribute("data-id", doc.id);
   itemDiv.classList.add("d-flex", "flex-row", "border-bottom", "border-primary");
   itemInfo.classList.add("container");
