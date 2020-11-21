@@ -35,7 +35,7 @@ function renderItem(doc) {
 
   // If the user is logged in and an item in their cart matches the item document,
   // set the quantity on this page to match their cart's quantity.
-  if (currentUser) {
+  if (userLoggedIn) {
     user.collection("cart").doc(doc.id).get().then(snap => {
       if (snap.exists) {
         quantity.textContent = snap.data().quantity;
@@ -79,7 +79,7 @@ function renderItem(doc) {
 
   // "Plus" button handler. Increments quantity if user is logged in.
   plus.addEventListener("click", event => {
-    if (currentUser) {
+    if (userLoggedIn) {
       const increment = firebase.firestore.FieldValue.increment(1);
       user.collection("cart").doc(doc.id).get().then(snap => {
         if (snap.exists) {
@@ -103,7 +103,7 @@ function renderItem(doc) {
   // "Minus" button handler. Decrements quantity.
   minus.addEventListener("click", event => {
     const decrement = firebase.firestore.FieldValue.increment(-1);
-    if (currentUser) {
+    if (userLoggedIn) {
       user.collection("cart").doc(doc.id).get().then(snap => {
         if(snap.exists) {
           user.collection("cart").doc(doc.id).update({
@@ -115,7 +115,7 @@ function renderItem(doc) {
   });
 
   // Whenever the doc is updated (only quantity), do something.
-  if (currentUser) {
+  if (userLoggedIn) {
     user.collection("cart").doc(doc.id).onSnapshot(updated => {
       if (updated.exists) {
         if (updated.data().quantity == 0) {
