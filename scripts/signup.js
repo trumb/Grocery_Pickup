@@ -1,18 +1,27 @@
-// The size of the cart. Number of items in the cart.
-var cartSize = 0;
+// The sign up form.
+const form = document.querySelector("#signUp");
 
-$("#submit").on("click", function (event) {
-  console.log( document.getElementById("email").value);
-   db.collection("accounts").doc().set({
-     email: document.getElementById("email").value,
-    firstname: document.getElementById("fname").value,
-    lastname: document.getElementById("lname").value,
-    phone: document.getElementById("num").value,
-    password: document.getElementById("password").value,
-
+// When the form is submitted, write to firebase auth and put an account into the users collection.
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  const email = form.email.value;
+  const password = form.password.value;
+  var remember_me = false;
+  if (document.getElementById("remember").checked) {
+    remember_me = true;
+  }
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(token => {
+    return db.collection("users").doc(token.user.uid).set({
+      first_name: form.firstName.value,
+      last_name: form.lastName.value,
+      phone_no: form.phoneNo.value,
+      remember_me: remember_me
+    });
+  }).then(token => {
+    form.reset();
+    location.href = "signup_succeed.html"
+  }).catch(error => {
+    console.log(error.code);
+    console.log(error.message);
   });
-  location.href = "/signup_succeed.html"
-  //db.collection("accounts").doc("EthanWinters").update({
-  //fieldName: true / false
-  // });
 });
