@@ -43,23 +43,38 @@ button {
   opacity: 1;
 }
 
+/* When cancel button clicked */
 button:hover {
   opacity: 1;
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
+  margin: .5% 0% 0 2.5%;
+  width: 43%;
   padding: 14px 20px;
+  background-color:  #1a0603;
+  color: #ffffff;
+}
+.cancelbtn:hover {
   background-color: #6e251c;
+  color: #fff7ff;
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,
+
 .signupbtn {
-  margin: .5% 1% 0 2%;
+  margin: .5% 2% 0 8%;
   width: 43%;
+  background-color:   #6e251c;
+  color: #ffffff;
 }
 
+/* When sign up button clicked */
+.signupbtn:hover {
+  background-color:#1a0603;
+  color: #fff7ff;
+}
 /* Add padding to container elements */
 .container {
   padding: 16px;
@@ -79,3 +94,4 @@ button:hover {
     width: 100%;
   }
 }
+

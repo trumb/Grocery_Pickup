@@ -67,6 +67,7 @@ body{
   font-size: 1.1em;
   margin-top: 10%;
   border: none;
+  
 }
 
 /* under about */
@@ -112,6 +113,9 @@ body{
 .btn-secondary  {
   background-color:  #6e251c;
   color: #ffffff;
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 1%;
 
 }
 /* When button clicked */
