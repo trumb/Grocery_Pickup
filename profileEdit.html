@@ -1,0 +1,210 @@
+<DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <title>Favorite Items Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@900&display=swap" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="styles/profile.css" rel="stylesheet">
+    </head>
+    
+    <body class="container">
+      <nav class="navbar navbar-expand-lg navbar-light " style=" background-color:#d8d6c4;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="#" style="font-size:40pt;font-family: 'Big Shoulders Stencil Display', cursive; color: rgb(80, 39, 11);">Smarket</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#" >Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ordering.html">Ordering <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="profilePage.html" >Profile</a>
+            </li>
+          </ul>
+    
+        </div>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    
+          </form>
+          <svg width="4em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="brown" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg>
+          <a class="nav-link btn-outline-warning" href="signup.html" style="border-radius: 8px;color: rgb(63, 15, 15); background-color: rgb(248, 219, 124);">Sign up</a>
+      </nav>
+        <div class="container emp-profile" id="edit">
+              <div class="col">
+                <div class="row">
+                  <div class="col mb-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="e-profile">
+                          <div class="row">
+                            <div class="col-12 col-sm-auto mb-3">
+                              <div class="mx-auto" style="width: 140px;">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <ul class="nav nav-tabs">
+                            <li class="nav-item"><a href="" class="active nav-link">Profile</a></li>
+                          </ul>
+                          <div class="tab-content pt-3">
+                            <div class="tab-pane active">
+                              <form class="form" novalidate="">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>First Name</label>
+                                          <input class="form-control" type="text" name="name" placeholder="Ethan">
+                                        </div>
+                                      </div>
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>Last Name</label>
+                                          <input class="form-control" type="text" name="username" placeholder="Winters">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>Email</label>
+                                          <input class="form-control" type="text" placeholder="Ethan_Winters34@hotmail.com">
+                                        </div>
+                                      </div>
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col">
+                                          <div class="form-group">
+                                            <label>Address Line</label>
+                                            <input class="form-control" type="text" placeholder="1234 W 12th Ave">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                  <div class="form-group">
+                                                    <label>City or Town</label>
+                                                    <input class="form-control" type="text" name="name" placeholder="Vancouver">
+                                                  </div>
+                                                </div>
+                                                <div class="col">
+                                                  <div class="form-group">
+                                                    <label>Province</label>
+                                                    <input class="form-control" type="text" name="username" placeholder="BC">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                  <div class="form-group">
+                                                    <label>Postal Code</label>
+                                                    <input class="form-control" type="text" name="name" placeholder="D2L 5UX">
+                                                  </div>
+                                                </div>
+                                                <div class="col">
+                                                  <div class="form-group">
+                                                    <label>Country</label>
+                                                    <input class="form-control" type="text" name="username" placeholder="Canada">
+                                                  </div>
+                                                </div>
+                                              </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-12 col-sm-6 mb-3">
+                                    <div class="mb-2"><b>Change Password</b></div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>Current Password</label>
+                                          <input class="form-control" type="password" placeholder="••••••••••">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>New Password</label>
+                                          <input class="form-control" type="password" placeholder="••••••••••">
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <div class="form-group">
+                                          <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
+                                          <input class="form-control" type="password" placeholder="••••••••••"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                                    <div class="mb-2"><b>Notification Preferences</b></div>
+                                    <div class="row">
+                                      <div class="col">
+                                        <label>Email Notifications</label>
+                                        <div class="custom-controls-stacked px-2">
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                                            <label class="custom-control-label" for="notifications-blog">Inbox Messages</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                                            <label class="custom-control-label" for="notifications-news">Receipts & Orders</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                                            <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col d-flex justify-content-end">
+                                    <div class=buttons>
+                                      <a href="profilePage.html"><button type="button" class="btn-secondary btn-lg btn-block"><b>Save Changes</b></button></a>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>            
+              </div>
+            </div>
+            </div>
+        </form>
+        </div>
+      <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <script src="scripts/firebase_api.js"></script>
+      <script src="scripts/checkout.js"></script>
+    </body>
+    
+    </html>
