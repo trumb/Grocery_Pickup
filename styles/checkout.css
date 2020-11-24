@@ -33,3 +33,15 @@ background: #f3e3b5;
   margin-top: 2%;
   border-color: #1e1d20 !important;
 }
+
+/* button before click */
+.btn-secondary  {
+  background-color:  #6e251c;
+  color: #ffffff;
+
+}
+/* When button clicked */
+.btn-secondary:hover {
+  background-color: #1a0603;
+  color: #fff7ff;
+}
