@@ -4280,6 +4280,7 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   color: #fff;
@@ -4293,6 +4294,7 @@ input[type="button"].btn-block {
   text-align: center;
 }
 
+
 .nav-justified > .nav-link,
 .nav-justified .nav-item {
   -ms-flex-preferred-size: 0;
@@ -4301,6 +4303,7 @@ input[type="button"].btn-block {
   flex-grow: 1;
   text-align: center;
 }
+
 
 .tab-content > .tab-pane {
   display: none;

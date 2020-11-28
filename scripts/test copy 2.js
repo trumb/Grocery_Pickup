@@ -49,9 +49,7 @@ function renderItem(doc) {
 
     // If the user is logged in and an item in their cart matches the item document,
     // set the quantity on this page to match their cart's quantity.
-    if (!userLoggedIn) {
-      quantityCol.style.visibility = "hidden";
-    }
+
     if (userLoggedIn) {
       user.collection("cart").doc(doc.id).get().then(snap => {
         if (snap.exists) {
@@ -136,9 +134,6 @@ function renderItem(doc) {
     addToCart.addEventListener("click", event => {
       addToCart.style.visibility = "hidden";
       quantityCol.style.visibility = "visible";
-      if (!userLoggedIn) {
-        alert("Please sign in to add to cart")
-      }
       if (userLoggedIn) {
         // const increment = firebase.firestore.FieldValue.increment(1);
         user.collection("cart").doc(doc.id).get().then(snap => {
