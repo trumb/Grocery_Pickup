@@ -115,7 +115,6 @@ body{
   color: #ffffff;
   width: 90%;
   margin-left: 5%;
-  margin-bottom: 1%;
 
 }
 /* When button clicked */
@@ -123,4 +122,10 @@ body{
   background-color: #1a0603;
   color: #fff7ff;
 }
+
+#first.btn-secondary {
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
 

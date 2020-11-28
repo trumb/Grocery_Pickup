@@ -1,0 +1,20 @@
+body {
+  background-color: #4ea9eb;
+  color: #fff7ff;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #a0ebe7;
+  border-color: #fff261;
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #f5644d;
+  border-color: #fff261;
+}
+
+.border-primary {
+  border-color: #fff261 !important;
+}
