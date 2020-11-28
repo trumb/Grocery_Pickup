@@ -1,19 +1,3 @@
-function printUserAuth() {
-  firebase.auth().onAuthStateChanged(function(user) {
-    if (user != null) {
-      console.log(user);
-      name = user.displayName;
-      email = user.email;
-      photoUrl = user.photoUrl;
-      uid = user.uid; //if this doesnt work use User.getTocken();
-      console.log(name);
-      console.log(email);
-      console.log(photoUrl);
-      console.log(uid);
-    }
-  }
-}
-
 //---------------------------------------------------
 // This function checks to see if the user is sign in.
 // If so, then you can go to the "users" collection,
