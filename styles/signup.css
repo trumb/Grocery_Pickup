@@ -1,12 +1,14 @@
 body {
-    background: -webkit-linear-gradient(top,#f8f5e6, #eeebd8);
+  background-color: #030303;
+  padding: 20px;
+  font-family: Arial;
 }
 .emp-signup{
   padding: 4%;
   margin-top: 3%;
   margin-bottom: 3%;
   border-radius: 0.5rem;
-  background: #f3e3b5;
+  background: #ffffff;
 }
 /* Full-width input fields */
 input[type=text],
@@ -27,7 +29,7 @@ input[type=password]:focus {
 }
 
 hr {
-  border: 1px solid #325250;
+  border: 1px solid #000000;
   margin-bottom: 25px;
 }
 
@@ -57,7 +59,7 @@ button:hover {
   color: #ffffff;
 }
 .cancelbtn:hover {
-  background-color: #6e251c;
+  background-color:#37bdda;
   color: #fff7ff;
 }
 
@@ -66,8 +68,8 @@ button:hover {
 .signupbtn {
   margin: .5% 2% 0 8%;
   width: 43%;
-  background-color:   #6e251c;
-  color: #ffffff;
+  background-color:  #37bdda;
+  color: #000000;
 }
 
 /* When sign up button clicked */
