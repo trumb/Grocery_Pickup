@@ -102,12 +102,10 @@ button:hover {
   background-color: #37bdda;
   color: #000000;
   font-size: 12pt;
-  border-color:20px #964747;
 
 }
 /* When button clicked */
 .btn-secondary:hover {
   background-color: #010202;
   color: #fff7ff;
-  border-color:20px #964747;
 }
