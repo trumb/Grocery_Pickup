@@ -18,3 +18,21 @@ var slideIndex = 0;
       dots[slideIndex-1].className += " active1";
       setTimeout(showSlides, 4000); // Change image every 2 seconds
     }
+    
+    const login = document.querySelector("#login");
+    const signOut = document.querySelector("#signOut");
+    login.addEventListener("submit", event => {
+      event.preventDefault();
+      const email = login.email.value;
+      const password = login.password.value;
+
+      auth.signInWithEmailAndPassword(email, password).then(account => {
+        console.log(account.user.uid);
+      });
+    });
+
+    signOut.addEventListener("click", event => {
+      event.preventDefault();
+      auth.signOut();
+      console.log("user signed out");
+    });

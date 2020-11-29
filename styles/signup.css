@@ -97,3 +97,15 @@ button:hover {
   }
 }
 
+/* button before click */
+.btn-secondary  {
+  background-color: #37bdda;
+  color: #000000;
+  font-size: 10pt;
+
+}
+/* When button clicked */
+.btn-secondary:hover {
+  background-color: #1a0603;
+  color: #fff7ff;
+}
