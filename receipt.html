@@ -16,7 +16,7 @@
 </style>
 </head>
 
-<body class="container">
+<body>
   <nav class="navbar navbar-expand-lg navbar-light " style=" background-color:#37bdda;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -50,10 +50,9 @@
     <h2>Receipt</h2>
     <p class="lead">Thank you for your service!</p>
     <div class='d-flex flex-column align-items-center'>
-      <p>Your order will be ready at</p>
-      <h3>10:30 AM PST</h3>
+      <p>We will call you when your order is ready.</p>
       <p>Your order number is</p>
-      <h3>12345678</h3>
+      <h3 id="order"></h3>
       <p>A log of this order has been saved to your profile.</p>
     </div>
   </div>
@@ -75,7 +74,7 @@
   <!-- Your own Firebase API key information -->
   <script src="scripts/firebase_api.js"></script>
   <!-- Your own JavaScript functions included here -->
-  <!-- <script src="scripts/receipt.js"></script> -->
+  <script src="scripts/receipt.js"></script>
 
 </body>
 

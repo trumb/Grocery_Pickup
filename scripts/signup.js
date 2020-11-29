@@ -27,6 +27,6 @@ form.addEventListener("submit", event => {
 });
 $(document).ready(function(){
   $('.cancelbtn').click(function(){
-    window.location.href="homepage.html";
+    window.location.href="index.html";
   })
 });
