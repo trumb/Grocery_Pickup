@@ -104,6 +104,7 @@ function createOrderRecord(cardNo) {
       card_type: card_type,
       card_no: cardNo
     });
+    localStorage.order = orderNo;
   });
   user.collection("cart").get().then(snap => {
     snap.forEach(doc => {
