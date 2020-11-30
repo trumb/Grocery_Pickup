@@ -109,3 +109,8 @@ button:hover {
   background-color: #010202;
   color: #fff7ff;
 }
+
+.fa-shopping-cart {
+  font-size: 30px;
+  color:rgb(238, 131, 131);
+}

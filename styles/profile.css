@@ -143,3 +143,8 @@ hr {
 #recentOrder div img {
   width: 30vmin;
 }
+
+.fa-shopping-cart {
+  font-size: 30px;
+  color:rgb(238, 131, 131);
+}
