@@ -174,9 +174,9 @@ function renderItem(doc) {
     itemInfo.classList.add("container");
     topRow.classList.add("row", "justify-content-between");
     nameCol.classList.add("col-auto");
-    bottomRow.classList.add("row", "h-50", "justify-content-between", "align-items-end");
+    bottomRow.classList.add("row", "h-50", "justify-content-between", "align-items-center");
     priceCol.classList.add("col-auto");
-    quantityCol.classList.add("col-5", "d-flex", "justify-content-between", "align-items-center", "w-5");
+    quantityCol.classList.add("col-9", "d-flex", "justify-content-between", "align-items-center", "w-5");
     quantity.size = 1;
     
 
