@@ -142,8 +142,8 @@ $("#empty").on("click", event => {
 // If cart size is greater than 0, enable proceed button. Else, disable it.
 function checkIfCartEmpty(cs) {
   if (cs > 0) {
-    $("footer a").removeClass("disabled");
+    $("#proceed").removeClass("disabled");
   } else {
-    $("footer a").addClass("disabled");
+    $("#proceed").addClass("disabled");
   }
 }
