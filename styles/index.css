@@ -172,3 +172,8 @@ h1 {
     width: 100%;
   }
 }
+
+.fa-shopping-cart {
+  font-size: 30px;
+  color:rgb(238, 131, 131);
+}
