@@ -176,7 +176,9 @@ function renderItem(doc) {
     nameCol.classList.add("col-auto");
     bottomRow.classList.add("row", "h-50", "justify-content-between", "align-items-end");
     priceCol.classList.add("col-auto");
-    quantityCol.classList.add("col-5", "d-flex", "justify-content-between", "align-items-center");
+    quantityCol.classList.add("col-5", "d-flex", "justify-content-between", "align-items-center", "w-5");
+    quantity.size = 1;
+    
 
     img.classList.add("img-fluid", "img-thumbnail");
     img.src = "images/" + img_name;
@@ -272,6 +274,7 @@ function renderItem(doc) {
         {
            lblCart.innerHTML =   parseInt(lblCart.innerHTML) + 1;
            lblCart.style.visibility='visible';
+           
         }
 
       }
