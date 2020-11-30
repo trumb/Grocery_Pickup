@@ -270,8 +270,8 @@ function renderItem(doc) {
           }
 
         });
-        if (lblCart.innerHTML !='')
-        {
+        if (lblCart.innerHTML !='') {
+        
            lblCart.innerHTML =   parseInt(lblCart.innerHTML) + 1;
            lblCart.style.visibility='visible';
            
@@ -329,10 +329,18 @@ function renderItem(doc) {
               addToCart.style.visibility = "visible";
               quantityCol.style.visibility = "hidden";
             }
+            if (lblCart.innerHTML !='') {
+        
+              lblCart.innerHTML =   parseInt(lblCart.innerHTML) - parseInt(snap.data().quantity);
+              lblCart.innerHTML =   parseInt(lblCart.innerHTML) + parseInt(quantity.value);
+              lblCart.style.visibility='visible';
+              
+           }
             user.collection("cart").doc(doc.id).update({
               quantity: parseInt(quantity.value),
 
             })
+            
             if (snap.data().quantity == 0 || quantity.value == 0) {
 
               addToCart.style.visibility = "visible";
@@ -342,6 +350,7 @@ function renderItem(doc) {
 
             addToCart.style.visibility = "visible";
           }
+
         });
       }
     });
