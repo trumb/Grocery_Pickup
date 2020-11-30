@@ -109,6 +109,7 @@ function createOrderRecord(cardNo) {
   user.collection("cart").get().then(snap => {
     snap.forEach(doc => {
       user.collection("orders").doc("" + orderNo).collection("cart").doc(doc.id).set({
+        img_name: doc.data().img_name,
         name: doc.data().name,
         price: doc.data().price,
         quantity: doc.data().quantity

@@ -73,7 +73,7 @@ hr {
   font-size: 1.1em;
   margin-top: 10%;
   border: none;
-  
+
 }
 
 /* under about */
@@ -140,4 +140,6 @@ hr {
   margin-top: 1%;
 }
 
-
+#recentOrder div img {
+  width: 30vmin;
+}
