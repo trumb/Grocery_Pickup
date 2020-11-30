@@ -23,7 +23,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#"
+      <a class="navbar-brand" href="homepage.html"
         style="font-size:40pt;font-family: 'Big Shoulders Stencil Display', cursive; text-shadow: 3px 3px #e7d5d5; color: rgb(80, 39, 11);">Smarket</a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
@@ -35,6 +35,32 @@
         <li class="nav-item">
           <a class="nav-link" href="profilePage.html" >Profile</a>
         </li>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 " >
+          <li class="nav-item " >
+            <a class="nav-link" href="ordering.html?department=Food" onclick="changeStyle(this);" >Food <span class="sr-only">(current)</span> </a>
+          </li>
+          <li class="nav-item " >
+            <a class="nav-link"  href="ordering.html?department=Baby" >Baby</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html?department=Health"  >Health & Beauty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html?department=Home">Home & Living<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html?department=Office">Office & School</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html?department=Pet">Pet Supplies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html?department=Toys">Toys</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ordering.html?department=Video">Video Games & Consoles</a>
+          </li>
+        </ul>
       </ul>
 
     </div>
@@ -42,92 +68,35 @@
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 
     </form>
-    <svg width="4em" height="2em" viewBox="0 0 16 16" class="" fill="brown"
-      xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd"
-        d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-      <path fill-rule="evenodd"
-        d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z" />
-    </svg>
-    <a class="nav-link btn-outline-warning" href="signup.html"
-      style="border-radius: 8px;color: rgb(63, 15, 15); background-color: #f8e958; font-family: 'Texturina', serif;">Sign up</a>
+
+    <!-- CART -->
+    <div class="navbar justify-content-center">
+      
+      <a href="checkout.html"><i id="scart" class="fas fa-shopping-cart"> <label id="lblCart"> </label></i> </a> 
+      
+    </div>
+  <!-- END CART -->
   </nav>
-  <div class ="sear">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 " >
-  <li class="nav-item " >
-    <a class="nav-link" href="ordering.html?department=Food" onclick="changeStyle(this);" >Food <span class="sr-only">(current)</span> </a>
-  </li>
-  <li class="nav-item " >
-    <a class="nav-link"  href="ordering.html?department=Baby" >Baby</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ordering.html?department=Health"  >Health & Beauty</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ordering.html?department=Home">Home & Living<span class="sr-only">(current)</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ordering.html?department=Office">Office & School</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ordering.html?department=Pet">Pet Supplies</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ordering.html?department=Toys">Toys</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="ordering.html?department=Video">Video Games & Consoles</a>
-  </li>
-</ul>
+
+  <!-- Dropdown -->
+
+<div><label class="sortBy">Sort By:</label>
+   
+    <select  id="ddSortBy" >   
+      <option class="dropdown-item"  value="alphaAsc" > Alphabetical (A-Z) </option>
+      <option class="dropdown-item"  value="alphaDesc">Alphabetical (Z-A)</option>
+      <option class="dropdown-item" value="priceLow">Price (Low to High)</option>
+      <option class="dropdown-item"  value="priceHigh">Price (High to Low)</option>
+   
+    </select>
   </div>
+  
+  <!-- End of Dropdown-->
   <br />
   <br />
   <div class="container">
     <div id="department" class="border border-primary rounded"></div>
-   <!-- <div class="row">
-      <div class="col-sm">
-        <div class="card" style="width: 25rem;">
-          <img src="images/banana.png" class="card-img-top" alt="card1">
-          <div class="card-body">
-            <h5 class="card-title">BANANA</h5>
-            <p class="card-text">FREE</p>
-            <a href="#" class="btn btn-dark" style="background-color: #6e251c">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 25rem;">
-          <img src="images/banana.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">GUCCI BANANA</h5>
-            <p class="card-text">$100000000000</p>
-            <a href="#" class="btn btn-dark" style="background-color: #6e251c">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 25rem;">
-          <img src="images/banana.png" class="card-img-top" alt="card1">
-          <div class="card-body">
-            <h5 class="card-title">BANANA</h5>
-            <p class="card-text">FREE</p>
-            <a href="#" class="btn btn-dark" style="background-color: #6e251c">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm">
-        <div class="card" style="width: 25rem;">
-          <img src="images/banana.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">GUCCI BANANA</h5>
-            <p class="card-text">$100000000000</p>
-            <a href="#" class="btn btn-dark" style="background-color: #6e251c">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
+
    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
    <!-- Add Firebase products that you want to use -->
@@ -139,7 +108,17 @@
    <!-- Your own Firebase API key information -->
    <script src="scripts/firebase_api.js"></script>
    <!-- Your own JavaScript functions included here -->
-   <script src="scripts/test.js"></script>
+   <script src="scripts/ordering.js"></script>
+     <!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+<!-- Bootstrap libraries from CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+
 </body>
 
 </html>

@@ -40,3 +40,12 @@ body {
   font-size: 25pt;;
   font-family: 'Arvo', serif;
 }
+
+.fa-shopping-cart {
+  font-size: 30px;
+  color:rgb(238, 131, 131);
+}
+
+#department img {
+  width: 30vmin;
+}
