@@ -1,7 +1,18 @@
 // The department div.
 const department = document.querySelector("#department");
 var urlParams = new URLSearchParams(window.location.search);
+//get query sting for department
 var depart = urlParams.get('department');
+if (depart==""){depart=null;}
+//get query sting for sort order
+var sort = urlParams.get('sort');
+var selID=document.getElementById("ddSortBy");
+//set sort by dropdown from the query string
+if (sort!=null )
+{
+selID.value=sort;
+}
+
 //alert(urlParams.get('department'));
 // The current user, if logged in. Otherwise, null.
 var userLoggedIn;
@@ -21,43 +32,133 @@ auth.onAuthStateChanged(token => {
 /////////makes nav bold
 var currElem = null; //will hold the element that is bold now
 
+//for the cart generic variable
+var vCartCount = 0;
+
 
 //////////////////////////////
+// Sends each document (item) in the cart to renderItem().
+var selID=document.getElementById("ddSortBy");
+var selectedSort=selID.options[selID.selectedIndex].value;
+
+//sort items based on the user selection from the Sort By dropdown
+switch(selectedSort)
+{
+  case "alphaAsc":
+  
+    db.collection("items")
+    //.where("name",txt)
+    .orderBy("name", "asc").get().then(snap => {
+      snap.forEach(doc => {
+        renderItem(doc);
+        
+      });
+    });
+    break;
+    case "alphaDesc":
+      db.collection("items").orderBy("name", "desc").get().then(snap => {
+        snap.forEach(doc => {
+          renderItem(doc);
+          
+        });
+      });
+    break;
+    case "priceLow":
+      db.collection("items").orderBy("price", "asc").get().then(snap => {
+        snap.forEach(doc => {
+          renderItem(doc);
+          
+        });
+      });
+    break;
+    case "priceHigh":
+      db.collection("items").orderBy("price", "desc").get().then(snap => {
+        snap.forEach(doc => {
+          renderItem(doc);
+          
+        });
+      });
+    break;
+
+  default:
+    db.collection("items").orderBy("name", "desc").get().then(snap => {
+    snap.forEach(doc => {
+      renderItem(doc);
+      
+    });
+  });
+}
+
+
+///////////////////////////
 // Renders each item in the cart.
 function renderItem(doc) {
 
+  let lblCart = document.getElementById("lblCart");
+  let quantity = document.createElement("input");
+  let itemDiv = document.createElement("div");
+  let itemInfo = document.createElement("div");
+  let img = document.createElement("img");
+  let name = document.createElement("h4");
+  let topRow = document.createElement("div");
+  let nameCol = document.createElement("div");
+  let bottomRow = document.createElement("div");
+  let priceCol = document.createElement("div");
+  let price = document.createElement("h5");
+  let quantityCol = document.createElement("div");
+  let plus = document.createElement("button");
+ 
+  let minus = document.createElement("button");
+  let addToCart = document.createElement("button");
+
+
+//add to cart code
+  lblCart.innerHTML = "";
+  lblCart.visibility='visible';
+  if (userLoggedIn) {
+            
+    user.collection("cart").doc(doc.id).get().then(snap => {
+      if (snap.exists) {
+        quantity.value = snap.data().quantity;
+        
+        if (quantity.value > 0) {
+          
+          vCartCount = parseInt(quantity.value) + vCartCount;
+      
+          lblCart.innerHTML = vCartCount;
+    
+        }
+        
+      }
+    } )
+  }
+  //end of add to cart
   if (doc.data().department == depart || depart == null) {
     let img_name = doc.data().img_name;
     let n = doc.data().name;
     let p = doc.data().price;
-
-    let itemDiv = document.createElement("div");
-    let itemInfo = document.createElement("div");
-    let img = document.createElement("img");
-    let name = document.createElement("h4");
-    let topRow = document.createElement("div");
-    let nameCol = document.createElement("div");
-    let bottomRow = document.createElement("div");
-    let priceCol = document.createElement("div");
-    let price = document.createElement("h5");
-    let quantityCol = document.createElement("div");
-    let plus = document.createElement("button");
-    let quantity = document.createElement("input");
-    let minus = document.createElement("button");
-    let addToCart = document.createElement("button");
+  
 
 
+    
+    //lblCart.innerHTML = "";
+    
     // If the user is logged in and an item in their cart matches the item document,
     // set the quantity on this page to match their cart's quantity.
     if (!userLoggedIn) {
       quantityCol.style.visibility = "hidden";
     }
     if (userLoggedIn) {
+      
+      
       user.collection("cart").doc(doc.id).get().then(snap => {
         if (snap.exists) {
           quantity.value = snap.data().quantity;
           quantityCol.style.visibility = "visible";
           addToCart.style.visibility = "hidden";
+
+             
+          
         } else {
           quantity.value = 0;
           quantityCol.style.visibility = "hidden";
@@ -128,6 +229,12 @@ function renderItem(doc) {
 
           }
         });
+        
+        if (lblCart.innerHTML !='')
+        {
+           lblCart.innerHTML =   parseInt(lblCart.innerHTML) + 1;
+           lblCart.style.visibility='visible';
+        }
 
       }
     });
@@ -146,7 +253,9 @@ function renderItem(doc) {
             // Increment quantity.
             user.collection("cart").doc(doc.id).update({
               quantity: increment
+              
             });
+    
           } else {
             // Add the item to the cart.
             user.collection("cart").doc(doc.id).set({
@@ -159,6 +268,11 @@ function renderItem(doc) {
           }
 
         });
+        if (lblCart.innerHTML !='')
+        {
+           lblCart.innerHTML =   parseInt(lblCart.innerHTML) + 1;
+           lblCart.style.visibility='visible';
+        }
 
       }
     });
@@ -181,6 +295,19 @@ function renderItem(doc) {
             addToCart.style.visibility = "visible";
           }
         });
+        //update cart
+        if (lblCart.value !='')
+        {
+           lblCart.innerHTML =   parseInt(lblCart.innerHTML) - 1;
+           lblCart.style.visibility='visible';
+        }
+        if (lblCart.innerHTML =='0')
+        {
+           lblCart.style.visibility='hidden';
+        } 
+        else{lblCart.style.visibility='visible';}
+    
+        
       }
     });
 
@@ -230,10 +357,48 @@ function renderItem(doc) {
       });
     }
   }
+
 }
-// Sends each document (item) in the cart to renderItem().
-db.collection("items").get().then(snap => {
-  snap.forEach(doc => {
-    renderItem(doc);
-  });
+
+//when user selects Sort By, call page again by passing sort and department in a query string so that we can order items from the database
+$("#ddSortBy").on("change", event => {
+      var selID=document.getElementById("ddSortBy");
+      var selectedSort=selID.options[selID.selectedIndex].value;
+      var strUrl = "";
+      
+      if(depart==null||depart=="")
+      {
+        strUrl = "Ordering.html?";
+      }
+      else{
+        strUrl = "Ordering.html?department=" + depart + "&";
+      }
+    
+      switch(selectedSort)
+      {
+        case "alphaAsc":
+          strUrl = strUrl + "sort=alphaAsc";
+          window.open(strUrl,"_self");
+          break;
+          case "alphaDesc":
+            strUrl = strUrl + "sort=alphaDesc";
+            window.open(strUrl,"_self");
+        
+          break;
+          case "priceLow":
+            strUrl = strUrl + "sort=priceLow";
+          window.open(strUrl,"_self");
+      
+          break;
+          case "priceHigh":
+            strUrl = strUrl + "sort=priceHigh";
+          window.open(strUrl,"_self");
+          
+          break;
+      
+        default:
+          strUrl = strUrl + "sort=alphaAsc";
+          window.open(strUrl,"_self");
+      }
+
 });

@@ -19,24 +19,46 @@ body {
 
 #department{
   background-color:snow;
-  margin-bottom:53% ;
+  margin-bottom:63% ;
 }
 
 #department img {
   width: 30vmin;
 }
-
-.container button{
+.border-primary {
+  border-color: #37bdda!important;
+}
+.container button {
   margin-right: 10%;
   background-color: #37bdda;
   color:#000000;
 }
-.container button:hover{
+.container button:hover {
   background-color: #000000;
 }
 
-.col-auto h4{
+.col-auto h4 {
   margin-top:15%;
-  font-size: 25pt;;
+  font-size: 4vmin;
   font-family: 'Arvo', serif;
 }
+
+<<<<<<< HEAD
+.fa-shopping-cart {
+  font-size: 30px;
+  color:rgb(238, 131, 131);
+}
+
+#department img {
+  width: 30vmin;
+}
+=======
+h5 {
+  font-size: 3vmin;
+}
+
+hr {
+  border: 1px solid #37bdda;
+  margin-bottom: 25px;
+}
+>>>>>>> 12ac45ce96f6493cb85696cbffabbd26e21653ac
