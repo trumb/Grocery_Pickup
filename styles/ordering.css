@@ -43,7 +43,6 @@ body {
   font-family: 'Arvo', serif;
 }
 
-<<<<<<< HEAD
 .fa-shopping-cart {
   font-size: 30px;
   color:rgb(238, 131, 131);
@@ -52,13 +51,7 @@ body {
 #department img {
   width: 30vmin;
 }
-=======
-h5 {
-  font-size: 3vmin;
-}
 
-hr {
-  border: 1px solid #37bdda;
-  margin-bottom: 25px;
+.sorrtBy {
+  justify-content: right;
 }
->>>>>>> 12ac45ce96f6493cb85696cbffabbd26e21653ac
