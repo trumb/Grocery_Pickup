@@ -25,3 +25,8 @@ form.addEventListener("submit", event => {
     console.log(error.message);
   });
 });
+$(document).ready(function(){
+  $('.cancelbtn').click(function(){
+    window.location.href="index.html";
+  })
+});
