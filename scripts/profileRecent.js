@@ -1,5 +1,7 @@
 var order = localStorage.getItem("order");
 
+$("#number").append(order);
+
 // References the currently logged in user's document (if logged in).
 var user;
 
